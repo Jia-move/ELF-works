@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+
+# Runtime data
+*.log
+logs/
+tmp/
+**/data/*.jsonl
+**/*.db-journal
+
+# Local secrets
+.env
+*.local
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

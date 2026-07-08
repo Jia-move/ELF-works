@@ -1,0 +1,72 @@
+[
+  {
+    "class_id": 0,
+    "raw_class_name": "elephant",
+    "class_name": "elephant",
+    "display_name": "大象",
+    "domain": "animal"
+  },
+  {
+    "class_id": 1,
+    "raw_class_name": "monkey",
+    "class_name": "monkey",
+    "display_name": "猴子",
+    "domain": "animal"
+  },
+  {
+    "class_id": 2,
+    "raw_class_name": "alpaca",
+    "class_name": "alpaca",
+    "display_name": "羊驼",
+    "domain": "animal"
+  },
+  {
+    "class_id": 3,
+    "raw_class_name": "tiger",
+    "class_name": "tiger",
+    "display_name": "老虎",
+    "domain": "animal"
+  },
+  {
+    "class_id": 4,
+    "raw_class_name": "panda",
+    "class_name": "panda",
+    "display_name": "熊猫",
+    "domain": "animal"
+  },
+  {
+    "class_id": 5,
+    "raw_class_name": "lion",
+    "class_name": "lion",
+    "display_name": "狮子",
+    "domain": "animal"
+  },
+  {
+    "class_id": 6,
+    "raw_class_name": "fox",
+    "class_name": "fox",
+    "display_name": "狐狸",
+    "domain": "animal"
+  },
+  {
+    "class_id": 7,
+    "raw_class_name": "camel",
+    "class_name": "camel",
+    "display_name": "骆驼",
+    "domain": "animal"
+  },
+  {
+    "class_id": 8,
+    "raw_class_name": "raccoon",
+    "class_name": "raccoon",
+    "display_name": "浣熊",
+    "domain": "animal"
+  },
+  {
+    "class_id": 9,
+    "raw_class_name": "bear",
+    "class_name": "bear",
+    "display_name": "熊",
+    "domain": "animal"
+  }
+]

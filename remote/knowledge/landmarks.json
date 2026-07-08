@@ -1,0 +1,68 @@
+[
+  {
+    "class_name": "forbidden_city",
+    "display_name": "故宫",
+    "intro": "故宫是明清两代的皇家宫殿，也是中国古代宫廷建筑的代表，1987年被列为世界文化遗产。",
+    "features": ["红墙黄瓦", "皇家建筑", "世界文化遗产", "明清历史"]
+  },
+  {
+    "class_name": "great_wall",
+    "display_name": "长城",
+    "intro": "长城是中国古代的军事防御工程，始建于春秋战国时期，1987年被列为世界文化遗产。",
+    "features": ["万里长城", "军事防御", "世界文化遗产", "古代奇迹"]
+  },
+  {
+    "class_name": "terracotta_army",
+    "display_name": "兵马俑",
+    "intro": "兵马俑是秦始皇陵的陪葬陶俑群，规模宏大，被誉为世界第八大奇迹。",
+    "features": ["秦始皇", "陶俑", "世界遗产", "古代军事"]
+  },
+  {
+    "class_name": "potala_palace",
+    "display_name": "布达拉宫",
+    "intro": "布达拉宫位于西藏拉萨，是藏传佛教的圣地和西藏历史的象征，1994年入选世界文化遗产。",
+    "features": ["西藏", "藏传佛教", "世界文化遗产", "高原建筑"]
+  },
+  {
+    "class_name": "mogao_caves",
+    "display_name": "莫高窟",
+    "intro": "莫高窟位于甘肃敦煌，以精美的壁画和塑像闻名，是中国佛教艺术的宝库。",
+    "features": ["敦煌", "壁画", "佛教艺术", "世界文化遗产"]
+  },
+  {
+    "class_name": "eiffel_tower",
+    "display_name": "埃菲尔铁塔",
+    "intro": "埃菲尔铁塔是法国巴黎的标志性建筑，建于1889年，高324米，每年吸引数百万游客。",
+    "features": ["法国", "巴黎", "铁塔", "世界地标"]
+  },
+  {
+    "class_name": "sphinx",
+    "display_name": "狮身人面像",
+    "intro": "狮身人面像位于埃及吉萨金字塔群旁，是古埃及文明的代表性雕塑，约有4500年历史。",
+    "features": ["埃及", "金字塔", "古文明", "雕塑"]
+  },
+  {
+    "class_name": "leaning_tower_of_pisa",
+    "display_name": "比萨斜塔",
+    "intro": "比萨斜塔是意大利比萨城的钟楼，因地基倾斜而闻名世界，建于12世纪。",
+    "features": ["意大利", "钟楼", "倾斜建筑", "世界遗产"]
+  },
+  {
+    "class_name": "sydney_opera_house",
+    "display_name": "悉尼歌剧院",
+    "intro": "悉尼歌剧院是澳大利亚的标志性建筑，贝壳造型独特，2007年被列为世界文化遗产。",
+    "features": ["澳大利亚", "歌剧院", "贝壳造型", "世界文化遗产"]
+  },
+  {
+    "class_name": "statue_of_liberty",
+    "display_name": "自由女神像",
+    "intro": "自由女神像是法国赠予美国的礼物，位于纽约港，象征自由与民主，1886年落成。",
+    "features": ["美国", "纽约", "自由象征", "地标"]
+  },
+  {
+    "class_name": "oriental_pearl_tower",
+    "display_name": "东方明珠塔",
+    "intro": "东方明珠广播电视塔位于上海浦东，高468米，是上海的标志性建筑和热门旅游景点。",
+    "features": ["上海", "电视塔", "现代建筑", "城市地标"]
+  }
+]

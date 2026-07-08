@@ -1,0 +1,151 @@
+# ============================================================================
+# RK3588 智能导览眼镜 — 配置文件
+# ============================================================================
+# 如果此文件不存在，程序将使用下方默认值运行（不会报错）
+# 修改任意值后重启程序即可生效
+# ============================================================================
+
+runtime:
+  mode: "sum"                        # 识别模式: "sum" (合并模型: 景点+动物) | "scenic" | "animal"
+
+modes:
+  sum:
+    name: "合并识别模式（景点+动物）"
+    model_path: "/home/elf/Documents/sum/rknnModel/best.rknn"
+    class_map: "data/class_map/classes_sum.json"
+    knowledge: "knowledge/sum_knowledge.json"
+    prompt_type: "scenic"
+    domain: "landmark"
+
+  scenic:
+    name: "景点识别模式"
+    model_path: "/home/elf/Documents/sum/rknnModel/best.rknn"
+    class_map: "data/class_map/classes_sum.json"
+    knowledge: "knowledge/sum_knowledge.json"
+    prompt_type: "scenic"
+    domain: "landmark"
+
+  animal:
+    name: "动物识别模式"
+    model_path: "/home/elf/Documents/sum/rknnModel/best.rknn"
+    class_map: "data/class_map/classes_sum.json"
+    knowledge: "knowledge/sum_knowledge.json"
+    prompt_type: "animal"
+    domain: "animal"
+
+model:
+  path: "./rknnModel/best.rknn"     # RKNN 模型路径（相对于项目根目录）
+  input_width:  640                 # 模型输入宽度（像素）
+  input_height: 640                 # 模型输入高度（像素）
+
+camera:
+  id: "/dev/video21"                # 摄像头设备路径（USB 摄像头用数字如 0）
+
+inference:
+  conf_threshold: 0.25              # 目标置信度阈值 (0.0 ~ 1.0)
+  iou_threshold:  0.45              # NMS IoU 阈值 (0.0 ~ 1.0)
+  thread_num:     8                 # RKNN 推理线程数（增大可提高帧率）
+
+display:
+  width:       1420                 # 显示窗口宽度
+  height:      800                  # 显示窗口高度
+  window_name: "Smart Guide Glasses" # 窗口标题
+  show_fps:    true                 # 是否在画面上叠加 FPS 信息
+  draw_boxes:  true                 # 是否绘制 YOLO 检测框
+
+performance:
+  print_interval_sec: 1.0           # 终端性能统计打印间隔（秒）
+
+pipeline:
+  async_mode:        false          # true=异步三线程流水线, false=同步模式
+  frame_queue_size:  4              # 摄像头帧队列最大长度（异步模式）
+  result_queue_size: 2              # 推理结果队列最大长度（异步模式）
+
+event_trigger:
+  cooldown_seconds: 5.0             # 两次触发最小间隔（秒）
+  min_confidence:    0.3            # 触发最低置信度
+  min_size:          "medium"       # 触发最低目标大小 (small/medium/large)
+  important_classes: []             # 重要类别（空=全部），如 ["The Great Wall","The Eiffel Tower"]
+  safety_classes:    []             # 安全类别（预留），如 ["car","bus","stairs","obstacle"]
+
+agent:
+  mode:             "mock"           # 运行模式: "mock" | "cloud"
+  api_key_env:      "GUIDE_AGENT_API_KEY"  # API Key 环境变量名
+  timeout_seconds:  5                # 云端请求超时（秒）
+  enable_cloud:     false            # 是否启用真实云端调用（需 mode=cloud）
+
+audio:
+  enable:           true             # 是否启用语音播报
+  mode:             "edge_tts"       # 播报模式: "mock" | "edge_tts"
+  cooldown_seconds: 8                # 同一景点两次播报最小间隔（秒）
+  # --- Redmi USB 录音 ---
+  input_backend:    "parecord"       # 录音后端: "parecord" (推荐) | "arecord"
+  input_source:     "alsa_input.usb-MV-SILICON_Redmi______________20190808-00.analog-stereo"
+  input_device:     "plughw:4,0"     # ALSA 录音设备（arecord fallback）
+  input_rate:       48000            # 录音采样率
+  input_channels:   1                # 声道数
+  record_seconds:   5                # 录音时长（秒）
+  # --- Redmi USB 播报 ---
+  output_backend:   "paplay"         # 播报后端: "paplay" (推荐) | "ffplay" | "aplay"
+  output_sink:      "alsa_output.usb-MV-SILICON_Redmi______________20190808-00.analog-stereo"
+  output_device:    "plughw:4,0"     # ALSA 播报设备（aplay fallback）
+  # --- 临时文件 ---
+  tts_wav_path:     "/tmp/smart_guide_tts.wav"
+  question_wav_path: "/tmp/smart_guide_question.wav"
+  question_pcm_path: "/tmp/smart_guide_question_16k.pcm"
+
+speaker:
+  mode:             "edge_tts"           # 播报模式: "mock" | "edge_tts"
+  output_device:    "plughw:4,0"         # 音箱 ALSA 设备 — Redmi USB
+  voice:            "zh-CN-XiaoxiaoNeural"  # edge-tts 语音角色
+  max_chars:        160                  # 播报文本最大字符数
+  tts_timeout:      25                   # TTS 生成超时（秒）
+  fallback_to_mock: true                 # TTS 失败时是否 fallback 到 mock
+
+asr:
+  enabled: true                                # 是否启用语音识别
+  provider: "xfyun"                            # ASR 提供商: "xfyun"
+  input_device: "plughw:4,0"                   # 麦克风设备 — Redmi USB
+  sample_rate: 16000                           # ASR 要求的采样率
+  channels: 1                                  # 声道数
+
+ui:
+  mode:                  "qt"        # 显示模式: "opencv" | "qt"
+  enable_qt:             true        # 是否启用 Qt 界面（需安装 PyQt5 或 PySide6）
+  fallback_to_opencv:    true        # Qt 不可用时自动回退 OpenCV
+
+web:
+  enable_record:        true         # 是否记录导览事件到本地 JSONL
+  enable_api_server:    false        # 是否启动 HTTP API 服务（默认关闭）
+  host:                 "0.0.0.0"    # API 监听地址
+  port:                 8080         # API 监听端口
+  record_file:          "data/guide_records.jsonl"  # 记录文件路径
+  device_id:            "rk3588_glasses_001"        # 设备标识
+
+deepseek:
+  enabled: true                                # 是否启用 DeepSeek API（无 API Key 时自动 mock）
+  base_url: "https://api.deepseek.com"         # API 地址（OpenAI 兼容）
+  model: "deepseek-v4-flash"                   # 模型名
+  timeout: 20                                  # 请求超时（秒）
+  max_retries: 1                               # 最大重试次数
+  temperature: 0.3                              # 生成温度
+  max_tokens: 300                               # 最大输出 token
+  thinking:
+    type: "disabled"                            # thinking 模式: disabled / enabled
+
+qa:
+  enabled: true                                 # 是否启用问答
+  input_mode: "text_or_voice"                   # 输入模式: "text" | "voice" | "text_or_voice"
+  voice_enabled: true                           # 是否启用语音输入
+  fallback_to_text: true                        # 语音失败时是否 fallback 到文本输入
+  max_history_turns: 5                          # 问答历史保留轮数
+  answer_max_chars: 120                         # 回答最大字数
+  intro_max_chars: 80                           # 自动介绍最大字数
+web_upload:
+  enabled: true
+  base_url: "http://10.147.102.48:8000"
+  device_id: "elf2-01"
+  heartbeat_interval_sec: 10
+  connect_timeout_sec: 3
+  read_timeout_sec: 5
+  queue_maxsize: 100

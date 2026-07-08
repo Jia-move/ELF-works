@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智能导览眼镜 — 交互记录</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- 头部 -->
+<header>
+  <h1>智能导览眼镜</h1>
+  <span class="subtitle">交互记录</span>
+</header>
+
+<!-- 状态栏 -->
+<div id="status-bar">
+  <span id="status-text">连接中...</span>
+  <span class="dot" id="status-dot"></span>
+</div>
+
+<!-- 设备状态面板 -->
+<div id="device-panel">
+  <div class="device-title">设备状态</div>
+  <div class="device-row">
+    <span class="device-label">USB Audio</span>
+    <span class="device-value" id="usb-audio-status">检测中...</span>
+  </div>
+</div>
+
+<!-- 筛选按钮 -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">全部</button>
+  <button class="filter-btn" data-filter="intro">自动介绍</button>
+  <button class="filter-btn" data-filter="qa">问答</button>
+  <span class="filter-count" id="filter-count"></span>
+</div>
+
+<!-- 记录列表 -->
+<div id="records-container">
+  <div class="empty-state" id="empty-state">暂无记录。请先运行导览程序以生成交互数据。</div>
+</div>
+
+<!-- 页脚 -->
+<footer>
+  <span id="refresh-info">自动刷新: 5s</span>
+  <span class="sep">|</span>
+  <span id="clock"></span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

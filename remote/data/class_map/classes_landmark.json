@@ -1,0 +1,79 @@
+[
+  {
+    "class_id": 0,
+    "raw_class_name": "The Forbidden City",
+    "class_name": "forbidden_city",
+    "display_name": "故宫",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 1,
+    "raw_class_name": "The Great Wall",
+    "class_name": "great_wall",
+    "display_name": "长城",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 2,
+    "raw_class_name": "Terracotta Army",
+    "class_name": "terracotta_army",
+    "display_name": "兵马俑",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 3,
+    "raw_class_name": "Potala Palace",
+    "class_name": "potala_palace",
+    "display_name": "布达拉宫",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 4,
+    "raw_class_name": "Mogao Caves",
+    "class_name": "mogao_caves",
+    "display_name": "莫高窟",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 5,
+    "raw_class_name": "The Eiffel Tower",
+    "class_name": "eiffel_tower",
+    "display_name": "埃菲尔铁塔",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 6,
+    "raw_class_name": "The Sphinx",
+    "class_name": "sphinx",
+    "display_name": "狮身人面像",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 7,
+    "raw_class_name": "The Leaning Tower of Pisa",
+    "class_name": "leaning_tower_of_pisa",
+    "display_name": "比萨斜塔",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 8,
+    "raw_class_name": "Sydney Opera House",
+    "class_name": "sydney_opera_house",
+    "display_name": "悉尼歌剧院",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 9,
+    "raw_class_name": "The Statue of Liberty",
+    "class_name": "statue_of_liberty",
+    "display_name": "自由女神像",
+    "domain": "landmark"
+  },
+  {
+    "class_id": 10,
+    "raw_class_name": "Shanghai Oriental Pearl Tower",
+    "class_name": "oriental_pearl_tower",
+    "display_name": "东方明珠塔",
+    "domain": "landmark"
+  }
+]
